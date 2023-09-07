@@ -1,0 +1,7 @@
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/CLYC.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/edit_cache.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/rebuild_cache.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/list_install_components.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/install.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/install/local.dir
+/home/gerry/桌面/Si&CLYC/build/CMakeFiles/install/strip.dir

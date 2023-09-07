@@ -1,0 +1,69 @@
+
+#/control/getEnv RAND1
+#/control/getEnv RAND2
+
+/random/setSeeds 60675 54037
+/gps/verbose 0
+/gps/particle neutron
+#/gps/particle geantino
+#/gps/pos/centre -3.0 0.0 120.0 cm
+/gps/pos/centre 0. 0. -120. mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0. 0. 100. mm
+#/gps/ang/type iso
+#/gps/pos/type Point
+#/gps/ang/mintheta 0 deg
+#/gps/ang/maxtheta 90 deg
+/gps/ene/type Arb
+/gps/hist/type arb
+#Data below from geant4 forum Zach Hartwig link:
+#http://hypernews.slac.stanford.edu/HyperNews/geant4/get/eventtrackmanage/1236.html?inline=-1
+#                E (MeV) Rel. Yield
+#
+/gps/hist/point  0.30 0.294087
+/gps/hist/point  0.61 0.336480
+/gps/hist/point  0.91 0.333407
+/gps/hist/point  1.21 0.311467
+/gps/hist/point  1.52 0.281732
+/gps/hist/point  1.82 0.249687
+/gps/hist/point  2.12 0.218192
+/gps/hist/point  2.42 0.188714
+/gps/hist/point  2.73 0.161938
+/gps/hist/point  3.03 0.138101
+/gps/hist/point  3.33 0.117182
+/gps/hist/point  3.64 0.099020
+/gps/hist/point  3.94 0.083382
+/gps/hist/point  4.24 0.070006
+/gps/hist/point  4.55 0.058626
+/gps/hist/point  4.85 0.048986
+/gps/hist/point  5.15 0.040851
+/gps/hist/point  5.45 0.034008
+/gps/hist/point  5.76 0.028268
+/gps/hist/point  6.06 0.023464
+/gps/hist/point  6.36 0.019452
+/gps/hist/point  6.67 0.016108
+/gps/hist/point  6.97 0.013325
+/gps/hist/point  7.27 0.011012
+/gps/hist/point  7.58 0.009093
+/gps/hist/point  7.88 0.007502
+/gps/hist/point  8.18 0.006185
+/gps/hist/point  8.48 0.005096
+/gps/hist/point  8.79 0.004196
+/gps/hist/point  9.09 0.003453
+/gps/hist/point  9.39 0.002839
+/gps/hist/point  9.70 0.002334
+/gps/hist/point  10.00 0.001918
+/gps/hist/point  10.30 0.001575
+/gps/hist/point  10.61 0.001293
+/gps/hist/point  10.91 0.001061
+/gps/hist/point  11.21 0.000870
+/gps/hist/point  11.52 0.000713
+/gps/hist/point  11.82 0.000585
+/gps/hist/inter Spline
+
+#/control/getEnv HEDIST
+#/control/getEnv HEORIENT
+#/control/getEnv RUNNUM
+#/analysis/setFileName NeutronRoom_AmBeSource_dist{HEDIST}cm_orient{HEORIENT}
+#/analysis/setFileName debug
+/run/beamOn 200  #0000

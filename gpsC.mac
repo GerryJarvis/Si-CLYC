@@ -1,0 +1,53 @@
+#GCR Multi Particle Emit
+###############################
+/gps/source/multiplevertex true
+#设为true以支持每个Event中产生多个粒子，即支持多重源
+#即使是在一个顶点中产生多个粒子也要设为true
+##########################
+#define incident particle定义发射粒子
+#SPE太阳质子事件----C 离子
+#定义发射粒子为C离子
+#/gps/ion Z原子序数 A原子质量 Q离子电荷 E激发能（keV）
+/gps/particle ion
+/gps/ion 6 12 6
+# type and distribution of beam 设置发射粒子结构
+/gps/pos/type Plane    #设置源位置分布类型，Point点，Plane平面,Beam束,Surface表面,Volume
+/gps/pos/shape Circle    #设置源形状，对于Plane:Circle,Annulus,Ellipse,Square,Rectangle   #对于Surface or Volume: Sphere, Ellipsoid,Cylinder,para
+#the incident surface is in the y_z plane  设置发射平面是在Y——Z平面
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 0 0 1
+/gps/pos/centre 0. 0. -120. mm
+/gps/pos/centre 0. 0. -50. mm     #设置信号源中心坐标默认（0，0，0）cm
+/gps/pos/radius 65.57 mm           #设置圆平面源半径，cm
+#Set angular distribution 设置发射角分布类型，iso默认，planar平面，focused聚焦
+# set the focusing point, default is (0, 0, 0)
+/gps/ang/type focused
+/gps/ang/focuspoint 0. 0. 100. mm
+
+#/gps/position 0 0 0 mm        # 设置源的位置为 (0, 0, 0) mm
+#/gps/direction 0 0 1        # 设置发射方向为 (0, 1, 0)
+ 
+#/gps/ang/type iso             # 设置发射方向的类型为等向发射
+
+#/gps/pos/type Plane
+#/gps/pos/shape Circle
+#/gps/pos/centre 0. 0. -10. cm
+#/gps/pos/radius 1. cm
+#/gps/direction 0. 0. 1.
+#/gps/energyuniform 100 MeV 1000 MeV       # 粒子能量在区间内均匀变化
+#/gps/ene/type Mono
+#/gps/ene/mono 1. GeV
+
+#设置粒子发射能谱
+/gps/ene/type Gauss  #设置能量分布类型，Mono单能，Lin线性，Pow幂指数，Exp指数，Gauss高斯，USER用户定义直方图，ARB逐点谱
+/gps/ene/mono 500 MeV  #700 MeV  #
+/gps/ene/sigma 250 MeV #350 MeV
+#/gps/ene/min 100 MeV
+#/gps/ene/max 1000 MeV
+#///////////////////////////////////////////////////////////////////
+
+#/gps/source/list
+#/gps/source/multiplevertex true
+#/control/execute vis.mac
+/run/beamOn 200000
+

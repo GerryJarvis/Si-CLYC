@@ -1,0 +1,18 @@
+/run/verbose 2
+/run/initialize
+/control/execute gpsO.mac
+/gps/source/multiplevertex true
+/gps/particle ion
+/gps/ion 8 16 8
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 0 0 1
+/gps/pos/centre 0. 0. -120. mm
+/gps/pos/radius 65.57 mm
+/gps/ang/type focused
+/gps/ang/focuspoint 0. 0. 100. mm
+/gps/ene/type Gauss
+/gps/ene/mono 600 MeV
+/gps/ene/sigma 250 MeV
+/run/beamOn 2000

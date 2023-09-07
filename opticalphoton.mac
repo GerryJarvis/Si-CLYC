@@ -1,0 +1,33 @@
+
+#定义发射粒子为可见光光子    用于测试铍窗厚度
+#/gps/ion Z原子序数 A原子质量 Q离子电荷 E激发能（keV）
+/gps/particle opticalphoton
+#/gps/ion 7 14 7
+# type and distribution of beam 设置发射粒子结构
+/gps/pos/type Plane    #设置源位置分布类型，Point点，Plane平面,Beam束,Surface表面,Volume
+/gps/pos/shape Circle    #设置源形状，对于Plane:Circle,Annulus,Ellipse,Square,Rectangle  
+                         #对于Surface or Volume: Sphere, Ellipsoid,Cylinder,para
+#the incident surface is in the y_z plane  设置发射平面是在Y——Z平面
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 0 0 1
+/gps/pos/centre 0. 0. -120. mm
+#/gps/pos/centre 0. 0. -50. mm     #设置信号源中心坐标默认（0，0，0）cm
+/gps/pos/radius 65.57 mm           #设置圆平面源半径，cm
+#Set angular distribution 设置发射角分布类型，iso默认，planar平面，focused聚焦
+# set the focusing point, default is (0, 0, 0)
+/gps/ang/type focused
+/gps/ang/focuspoint 0. 0. 100. mm
+
+#设置粒子发射能谱
+/gps/ene/type Gauss #设置能量分布类型，Mono单能，Lin线性，Pow幂指数，Exp指数，Gauss高斯，USER用户定义直方图，ARB逐点谱
+/gps/ene/mono 55 eV   #  700 MeV   
+/gps/ene/sigma 27.5 eV
+
+
+############################################################################
+
+#/gps/source/list
+#/gps/source/multiplevertex true
+#/control/execute vis.mac
+/run/beamOn 200    #000
+
